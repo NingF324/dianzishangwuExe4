@@ -19,6 +19,11 @@ def index_page():
     return render_template('index.html')
 
 
+@index_bp.route('/new')
+def home_page():
+    return render_template('homepage.html')
+
+
 @index_bp.route('/details')
 def detail_page():
     commentword = request.args.get('commentword')
@@ -33,7 +38,8 @@ def detail_page():
     else:
         grade = seedword_model.grade
 
-    return render_template('topic-details.html', thisword=commentword, thislink=piclink, introduction=introduction, seedword=seedword, grade=grade)
+    return render_template('topic-details.html', thisword=commentword, thislink=piclink, introduction=introduction,
+                           seedword=seedword, grade=grade)
 
 
 # @index_bp.route('/lists')
