@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}JustVs{% endblock %}
+{% block head %}
+<!-- TODO:引入需要引入的头文件等 -->
+{% endblock %}
+{% block body %}
+<!-- TODO:写入主体页面内容 -->
+
+<section class="timeline-section section-padding" id="section_3">
+    <div class="section-overlay"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 text-center" >
+                <h2 class="text-white mb-4" id="title"></h2>
+            </div>
+
+            <div class="col-lg-10 col-12 mx-auto">
+                <div class="timeline-container">
+                    <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                        <div class="list-progress">
+                            <div class="inner"></div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 text-center mt-5">
+                <p class="text-white">
+                    <a href="" id="download-btn" class="btn custom-btn custom-border-btn ms-3" style="display: none;">Download</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+<!-- TODO:载入或写入js -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/marked.min.js"></script>
+<script src="../static/js/jquery.sticky.js"></script>
+<!-- <script src="../static/js/click-scroll.js"></script> -->
+<script src="../static/js/custom.js"></script>
+
+<script>
+    $(function() {
+    $('#download-btn').hide();
+
+    // 显示“智能生成中”的占位内容
+    $('#title').text('智能生成中...');
+    $('#vertical-scrollable-timeline').empty(); // 清空旧数据
+    $('#vertical-scrollable-timeline').append('<li class="loading-message text-white">请稍候，正在生成内容...</li>');
+
+    $.ajax({
+        type: "POST",
+        url: "/gpt/twoWord",
+        dataType: "JSON",
+        data: {
+            brand1: "{{seedword}}",
+            brand2: "{{compword}}"
+        },
+        success: function(res) {
+            show(res);
+        },
+        error: function() {
+            // 请求失败时显示错误信息
+            $('#title').text('生成失败，请重试');
+            $('#vertical-scrollable-timeline').empty();
+            $('#vertical-scrollable-timeline').append('<li class="error-message text-danger">生成内容时出错，请稍后再试。</li>');
+        }
+    });
+
+    function show(data) {
+        // 清除“智能生成中”的提示
+        $('#vertical-scrollable-timeline').empty();
+
+        // 显示生成结果
+        document.getElementById('title').innerText = data.title;
+        let iconClasses = [
+            'bi-search', 'bi-heart', 'bi-star', 'bi-lightbulb', 'bi-gift', 'bi-music-note', 'bi-tv', 'bi-camera-reels',
+            'bi-compass', 'bi-cup', 'bi-headphones', 'bi-telephone', 'bi-briefcase', 'bi-credit-card', 'bi-trophy',
+            'bi-bicycle', 'bi-umbrella', 'bi-basket', 'bi-book', 'bi-cloud'
+        ];
+        for (let i = 1; i < data.block_num + 1; i++) {
+            console.log(data['block' + i]);
+            let BlockItem =
+                '<li class="active">' +
+                '    <h4 class="text-white mb-3">' + data['block' + i].title + '</h4>' +
+                '    <p class="text-white">' + data['block' + i].text + '</p>' +
+                '    <div class="icon-holder">' +
+                '        <i class=" ' + iconClasses[i] + '"></i>' +
+                '    </div>' +
+                '</li>';
+            $('#vertical-scrollable-timeline').append(BlockItem);
+        }
+        $('#download-btn').attr('href', data.md_path);
+        $('#download-btn').show();
+    }
+});
+
+
+</script>
+
+
+{% endblock %}
