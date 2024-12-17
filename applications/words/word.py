@@ -61,7 +61,7 @@ def get_compword():
                     'grade_num': grade_num
                 }
                 count += 1
-            return render_template('topic-listing.html', result=result)
+            return render_template('listing.html', result=result)
 
         else:
             print("使用compkey算法")
@@ -176,7 +176,7 @@ def get_compword():
                     'grade_num': grade_num
                 }
                 count += 1
-            return render_template('topic-listing.html', result=result)
+            return render_template('listing.html', result=result)
 
 
 @compkey_blue.route('/getHotwords', methods=['GET'])

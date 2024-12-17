@@ -6,17 +6,12 @@ from models import *
 
 @index_bp.route('/login')
 def login_index():
-    return render_template('new_login.html')
+    return render_template('login.html')
 
 
 @index_bp.route('/register')
 def register_index():
     return render_template('register.html')
-
-
-@index_bp.route('/new')
-def index_page():
-    return render_template('index.html')
 
 
 @index_bp.route('/')
@@ -38,22 +33,17 @@ def detail_page():
     else:
         grade = seedword_model.grade
 
-    return render_template('topic-details.html', thisword=commentword, thislink=piclink, introduction=introduction,
+    return render_template('details.html', thisword=commentword, thislink=piclink, introduction=introduction,
                            seedword=seedword, grade=grade)
 
 
 # @index_bp.route('/lists')
 # def list_page():
-#     return render_template('topic-listing.html')
+#     return render_template('listing.html')
 
 @index_bp.route('/report', methods=['GET'])
 def report_page():
     seedword = request.args.get('seedword')
     compword = request.args.get('compword')
     # 在这里可以使用 seedword 和 compword 进行相应的处理
-    return render_template('keyword-report.html', seedword=seedword, compword=compword)
-
-
-@index_bp.route('/vip')
-def vip_page():
-    return render_template('vip-confirm.html')
+    return render_template('report.html', seedword=seedword, compword=compword)
