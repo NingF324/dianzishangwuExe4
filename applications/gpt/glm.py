@@ -22,7 +22,7 @@ def generate_competitive_analysis_report():
     api_key = Config.api_key
     if api_key:
         client = ZhipuAI(api_key=api_key)
-        prompt = f"请用中文回答下面问题并生成中文文档，使用markdown格式，请注意不要有任何和时间相关的警告说明，也不要生成目录，生成的markdown格式不要用****等强调语法，Please provide a detailed competitive analysis report between {brand1} and {brand2}, " \
+        prompt = f"请用中文回答下面问题并生成中文文档，使用markdown格式，请注意不要有任何和时间相关的警告说明，也不要生成目录，生成的markdown中不要使用****强调语法，Please provide a detailed competitive analysis report between {brand1} and {brand2}, " \
                  f"focusing on their market strategies, product offerings, sales performance, technological advancements, " \
                  f"and future prospects. "
         response = client.chat.completions.create(

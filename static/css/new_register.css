@@ -157,7 +157,7 @@ span a:hover {
 
 /*添加一部分来修改顶部栏被篡改的效果*/
 .demo_1 {
-    background-color: var(--secondary-color);
+    background-color: #00a4b8;
 }
 
 @media only screen and (max-width: 768px) {

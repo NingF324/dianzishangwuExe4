@@ -9,7 +9,7 @@
         <meta name="author" content="">
 
         <title>{% block title %}{% endblock %}</title>
-        <link rel="icon" href="../static/images/icon.png" sizes="32x32">
+        <link rel="icon" href="../static/images/title-icon.png" sizes="32x32">
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -35,8 +35,7 @@
         <nav class="navbar navbar-expand-lg demo_1" >
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="../static/images/logo.png" alt="logo1" style="height: 48px; width: 48px;"/>
-                    <span>JustVS</span>
+                    <span>CompkeySys</span>
                 </a>
 
                 <div class="d-lg-none ms-auto me-4">
@@ -52,19 +51,19 @@
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         {% if 'username' in session %}
                             <li class="nav-item">
-                                <span class="nav-link">Welcome, {{ session['username'] }}!</span>
+                                <span class="nav-link">欢迎, {{ session['username'] }}!</span>
                             </li>
 
                         {% endif %}
                         {% if 'role' in session %}
                         <li class="nav-item">
                             {% if session['role'] == 0 %}
-                                <span class="nav-link">普通用户</span>
+                                <span class="nav-link"></span>
                             <li class="nav-item">
                                 <a class="nav-link" href="/vip">VIP Application</a>
                             </li>
                             {% elif session['role'] == 1 %}
-                                <span class="nav-link">尊贵的VIP用户</span>
+                                <span class="nav-link"></span>
                         {% endif %}
                         </li>
                  {% endif %}
@@ -85,7 +84,7 @@
                 <div class="col-lg-3 col-12 mb-4 pb-2">
                     <a class="navbar-brand mb-2" href="/">
                         <i class="bi-back"></i>
-                        <span>JustVS</span>
+                        <span>CompkeySys</span>
                     </a>
                 </div>
 
@@ -104,7 +103,7 @@
                         </ul>
                     </div> -->
 
-                    <p class="copyright-text mt-lg-5 mt-4">2023 电子商务第三小组.
+                    <p class="copyright-text mt-lg-5 mt-4">电子商务实验
                         <!-- <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> -->
                     </p>
 

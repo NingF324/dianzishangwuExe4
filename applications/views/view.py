@@ -14,12 +14,12 @@ def register_index():
     return render_template('register.html')
 
 
-@index_bp.route('/')
+@index_bp.route('/new')
 def index_page():
     return render_template('index.html')
 
 
-@index_bp.route('/new')
+@index_bp.route('/')
 def home_page():
     return render_template('homepage.html')
 

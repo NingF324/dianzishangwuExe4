@@ -1,7 +1,7 @@
 # Py-CompKey-Sys
 
 #### 介绍
-    本系统的名称为JustVS，意为“就比一下吧”
+    本系统的名称为CompkeySys，意为“就比一下吧”
     系统的标语为comparison is all you need！ 源于attention is all you need！注意力机制的paper
     这个系统主要是基于compkey算法实现的搜索系统，项目性质属于CSU的课程大作业
 

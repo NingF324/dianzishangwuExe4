@@ -248,7 +248,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(15deg, #ff3b2c 0%, #00a4ff 100%);
   padding-top: 150px;
   padding-bottom: 80px;
 }
@@ -284,11 +284,11 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: var(--secondary-color);
+  background-color: #03a4ed;
 }
 
 .navbar {
-  background: transparent;
+  background: #03a4ed;
   border-bottom: 1px solid rgba(128, 208, 199, 0.35);
   z-index: 9;
 }
@@ -726,7 +726,7 @@ blockquote {
   TIMELINE              
 -----------------------------------------*/
 .timeline-section {
-  background-image: url('../images/colleagues-working-cozy-office-medium-shot.jpg');
+  background-image: url('../assets/images/services-left-image.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -927,7 +927,7 @@ blockquote {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  border-bottom: 10px solid var(--secondary-color);
+  border-bottom: 10px solid #03a4ed;
   position: relative;
 }
 
@@ -940,7 +940,7 @@ blockquote {
   height: 0;
   border-style: solid;
   border-width: 0 0 200px 200px;
-  border-color: transparent transparent var(--secondary-color) transparent;
+  border-color: transparent transparent #03a4ed transparent;
   pointer-events: none;
 }
 
@@ -993,7 +993,7 @@ blockquote {
 }
 
 .site-footer-link {
-  color: var(--secondary-color);
+  color: #03a4ed;
   font-size: var(--copyright-font-size);
   font-weight: var(--font-weight-medium);
   line-height: normal;

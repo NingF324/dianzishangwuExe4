@@ -31,7 +31,7 @@ class SeedWordModel(db.Model):
     word = db.Column(db.String(20), comment='种子关键词名称')
     num = db.Column(db.Integer, comment='被搜索的次数', default=0)
     grade = db.Column(db.Float, comment='所有用户评的分的平均分，种子关键词的分')
-    introduction = db.Column(db.String(500), comment='种子关键词的描述', default="等你来说说TA是什么水平")
+    introduction = db.Column(db.String(500), comment='种子关键词的描述', default="暂无评论")
     compwords = db.relationship('SeedwordCompword')
 
 
@@ -39,7 +39,7 @@ class CompWordModel(db.Model):
     __tablename__ = 'compword'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, comment='种子关键词的ID')
     word = db.Column(db.String(20), comment='竞争关键词名称')
-    introduction = db.Column(db.String(500), comment='种子关键词的描述', default="等你来说说TA是什么水平")
+    introduction = db.Column(db.String(500), comment='种子关键词的描述', default="暂无评论")
 
 class AgencyWordModel(db.Model):
     __tablename__ = 'agencyword'
