@@ -43,8 +43,8 @@ def get_compword():
             grade_num = CommentModel.query.filter_by(seedword_id=seedword_model.id, compword_id=None).count()
             result['seedword'] = {
                 'word': seedword,
-                'introduction': seedword_model.introduction if seedword_model.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                'comment': comment_model.text if comment_model and comment_model.text else '等你来说说TA是什么水平',
+                'introduction': seedword_model.introduction if seedword_model.introduction else '',
+                'comment': comment_model.text if comment_model and comment_model.text else '',
                 'grade': seedword_model.grade if seedword_model.grade else '2.5',
                 'grade_num': grade_num
             }
@@ -55,8 +55,8 @@ def get_compword():
                 result['compword' + str(count)] = {
                     'word': middle.compword.word,
                     'comp': middle.comp_value,
-                    'introduction': middle.compword.introduction if middle.compword.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                    'comment': comment_model.text if comment_model and comment_model.text else '等你来说说TA是什么水平',
+                    'introduction': middle.compword.introduction if middle.compword.introduction else '',
+                    'comment': comment_model.text if comment_model and comment_model.text else '',
                     'grade': middle.grade if middle.grade else '2.5',
                     'grade_num': grade_num
                 }
@@ -92,8 +92,8 @@ def get_compword():
 
             result['seedword'] = {
                 'word': seedword,
-                'introduction': seedword_model.introduction if seedword_model.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                'comment': comment_model.text if comment_model else '等你来说说TA是什么水平'
+                'introduction': seedword_model.introduction if seedword_model.introduction else '',
+                'comment': comment_model.text if comment_model else ''
             }
 
             count = 0  # 计数用
@@ -128,8 +128,8 @@ def get_compword():
                     result['compword' + str(count+1)] = {
                         'word': compkey,
                         'comp': comp,
-                        'introduction': compword_model.introduction if compword_model.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                        'comment': comment_model.text if comment_model else '等你来说说TA是什么水平'
+                        'introduction': compword_model.introduction if compword_model.introduction else '',
+                        'comment': comment_model.text if comment_model else ''
                     }
 
                     for agencyword in agency_list:
@@ -155,8 +155,8 @@ def get_compword():
             grade_num = CommentModel.query.filter_by(seedword_id=seedword_model.id, compword_id=None).count()
             result['seedword'] = {
                 'word': seedword,
-                'introduction': seedword_model.introduction if seedword_model.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                'comment': comment_model.text if comment_model and comment_model.text else '等你来说说TA是什么水平',
+                'introduction': seedword_model.introduction if seedword_model.introduction else '',
+                'comment': comment_model.text if comment_model and comment_model.text else '',
                 'grade': seedword_model.grade if seedword_model.grade else '2.5',
                 'grade_num': grade_num
             }
@@ -170,8 +170,8 @@ def get_compword():
                 result['compword' + str(count)] = {
                     'word': middle.compword.word,
                     'comp': middle.comp_value,
-                    'introduction': middle.compword.introduction if middle.compword.introduction else '中南大学，铁道学院，知行合一，经世致用，前程似锦，灿烂光明，电子商务，问题不大，继续努力',
-                    'comment': comment_model.text if comment_model and comment_model.text else '等你来说说TA是什么水平',
+                    'introduction': middle.compword.introduction if middle.compword.introduction else '',
+                    'comment': comment_model.text if comment_model and comment_model.text else '',
                     'grade': middle.grade if middle.grade else '2.5',
                     'grade_num': grade_num
                 }

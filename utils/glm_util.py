@@ -1,7 +1,7 @@
 import time
 import openai
 from zhipuai import ZhipuAI
-from applications.gpt import gpt
+from applications.glm import gpt
 from tenacity import retry, stop_after_attempt, wait_random_exponential, wait_fixed
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 from flask import Flask, request, session, redirect
